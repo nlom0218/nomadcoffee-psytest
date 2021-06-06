@@ -16,8 +16,6 @@ import coffee5Img from "./img/coffee5-unsplash.jpg"
 import coffee6Img from "./img/coffee6-unsplash.jpg"
 import coffee7Img from "./img/coffee7-unsplash.jpg"
 
-
-
 export const checkList = [
   {
     id: 1,
