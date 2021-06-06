@@ -65,7 +65,7 @@ const CoffeeContent = styled.li`
   }
 `
 
-const List = () => {
+const List = ({ imgs }) => {
   const coffeeList = coffee
 
   return (<><Container>
@@ -76,7 +76,7 @@ const List = () => {
           <FontAwesomeIcon icon={faCoffee} />
           {coffee?.EName}
         </CoffeeName>
-        <CoffeeImg src={coffee?.img} />
+        <CoffeeImg src={imgs[index].currentSrc} />
         <CoffeeContents>
           {coffee?.contents.map((item, index) =>
             <CoffeeContent key={index}>

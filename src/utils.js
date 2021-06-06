@@ -20,32 +20,3 @@ export const coffeeInfo = (score) => {
   }
 }
 
-export const files = [
-  "/static/media/test1-unsplash.jpg",
-  "/static/media/test2-unsplash.jpg",
-  "/static/media/test3-unsplash.jpg",
-  "/static/media/test4-unsplash.jpg",
-  "/static/media/test5-unsplash.jpg",
-  "/static/media/test6-unsplash.jpg",
-  "/static/media/test7-unsplash.jpg",
-  "/static/media/test8-unsplash.jpg",
-  "/static/media/test9-unsplash.jpg",
-  "/static/media/test10-unsplash.jpg",
-  "/static/media/coffee1-unsplash.jpg",
-  "/static/media/coffee2-unsplash.jpg",
-  "/static/media/coffee3-unsplash.jpg",
-  "/static/media/coffee4-unsplash.jpg",
-  "/static/media/coffee5-unsplash.jpg",
-  "/static/media/coffee6-unsplash.jpg",
-  "/static/media/coffee7-unsplash.jpg",
-]
-
-
-export const preloading = async (files) => {
-  let imgs = new Array()
-  for (let i = 0; i < files.length; i++) {
-    imgs[i] = new Image()
-    imgs[i].src = files[i];
-  }
-  return imgs
-}

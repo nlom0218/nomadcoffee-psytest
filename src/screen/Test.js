@@ -78,7 +78,7 @@ const Option = styled.li`
   }
 `
 
-const Test = () => {
+const Test = ({ imgs, finsihImg }) => {
   const [num, setNum] = useState(0)
   const lastScore = useReactiveVar(scoreVar)
   const onClikeNextBtn = (e) => {
@@ -90,7 +90,7 @@ const Test = () => {
     return num * 60 + 20
   }
   return (<><Container>
-    {num === 10 ? <Finish /> : <>
+    {num === 10 ? <Finish finsihImg={finsihImg} /> : <>
       <Status>
         <StautsIcon style={{ left: leftSize() }}>
           <FontAwesomeIcon icon={faCoffee} />
@@ -103,7 +103,7 @@ const Test = () => {
           {checkList[num].title}
         </div>
       </Title>
-      <Img src={checkList[num].img}></Img>
+      <Img src={imgs[num].currentSrc}></Img>
       <Options>
         {checkList[num].options.map((option, index) => (
           <Option

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { scoreVar } from '../apollo';
 import Footer from '../components/Footer';
-import home_img from "../img/home-unsplash.jpg"
 
 const Container = styled.div`
   display: flex;
@@ -58,7 +57,7 @@ const HomeMsg = styled.span`
   line-height: 20px;
 `
 
-const Home = () => {
+const Home = ({ imgs }) => {
   return (<>
     <Container>
       <MainTitle>
@@ -68,7 +67,7 @@ const Home = () => {
       <FontAwesomeIcon icon={faCoffee} />
     가 마시고 싶다
     </SubTitle>
-      <Img src={home_img} />
+      <Img src={imgs} />
       <Link to="/test" onClick={() => scoreVar(0)}>
         <StartBtn>START</StartBtn>
       </Link>

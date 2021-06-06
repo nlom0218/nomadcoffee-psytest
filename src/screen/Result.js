@@ -60,9 +60,10 @@ const CoffeeContent = styled.li`
   }
 `
 
-const Result = () => {
+const Result = ({ imgs }) => {
   const score = useReactiveVar(scoreVar)
   const coffee = coffeeInfo(score)
+  console.log(coffee?.id);
   console.log(coffee);
   return (<>
     {coffee === null ? <NotFound /> : <Container>
@@ -71,7 +72,7 @@ const Result = () => {
           <FontAwesomeIcon icon={faCoffee} />
           {coffee?.EName}
         </CoffeeName>
-        <CoffeeImg src={coffee?.img} />
+        <CoffeeImg src={imgs[coffee?.id - 1].currentSrc} />
         <CoffeeContents>
           {coffee?.contents.map((item, index) =>
             <CoffeeContent key={index}>

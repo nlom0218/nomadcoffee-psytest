@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import info_img from "../img/info-unsplash.jpg"
 
 const Container = styled.div`
   display: flex;
@@ -60,10 +59,10 @@ const CoffeeInfoWiki = styled.a`
   margin-left: 10px;
 `
 
-const Info = () => {
+const Info = ({ imgs }) => {
   return (<Container>
     <Title>NOMAD COFFEE INFO</Title>
-    <InfoImg src={info_img} />
+    <InfoImg src={imgs} />
     <ImgInfo>
       <ImgInfoText>Image Form: </ImgInfoText>
       <ImgInfoHref href="https://unsplash.com/" target="_blank">unsplash free image</ImgInfoHref>
