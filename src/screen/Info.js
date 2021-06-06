@@ -1,4 +1,7 @@
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import info_img from "../img/info-unsplash.jpg"
 
@@ -59,13 +62,21 @@ const CoffeeInfoBlog = styled.a`
 const CoffeeInfoWiki = styled.a`
   margin-left: 10px;
 `
+const HomeBtn = styled.div`
+  margin-top: 50px;
+  svg {
+    cursor: pointer;
+    font-size: 30px;
+    color: ${props => props.theme.iconColor};
+  }
+`
 
 const Info = () => {
   return (<Container>
     <Title>NOMAD COFFEE INFO</Title>
     <InfoImg src={info_img} />
     <ImgInfo>
-      <ImgInfoText>Image Form: </ImgInfoText>
+      <ImgInfoText>Image From: </ImgInfoText>
       <ImgInfoHref href="https://unsplash.com/" target="_blank">unsplash free image</ImgInfoHref>
     </ImgInfo>
     <CoffeeInfo>
@@ -74,6 +85,11 @@ const Info = () => {
         /
         <CoffeeInfoWiki href="https://namu.wiki/w/%EC%BB%A4%ED%94%BC" target="_blank">Namu Wiki</CoffeeInfoWiki>
     </CoffeeInfo>
+    <HomeBtn>
+      <Link to="/">
+        <FontAwesomeIcon icon={faHome} />
+      </Link>
+    </HomeBtn>
   </Container >
   );
 }
