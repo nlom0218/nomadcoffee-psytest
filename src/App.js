@@ -1,6 +1,6 @@
 import { useReactiveVar } from '@apollo/client';
 import React from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import styled, { ThemeProvider } from 'styled-components';
 import DarkModeBtn from './components/DarkModeBtn';
 import Home from './screen/Home';

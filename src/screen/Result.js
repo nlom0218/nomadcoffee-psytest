@@ -2,7 +2,6 @@ import { useReactiveVar } from '@apollo/client';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Redirect } from 'react-router';
 import styled from 'styled-components';
 import { scoreVar } from '../apollo';
 import Nav from '../components/Nav';
