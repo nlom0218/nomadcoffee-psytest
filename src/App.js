@@ -76,12 +76,12 @@ function App() {
       <DarkModeBtn />
       <Container>
         <Switch>
-          <Route exact path="/" ><Home imgs={homeImgsPreLoading[0].currentSrc} /></Route>
-          <Route path="/test"><Test imgs={testImgsPreLoading} finsihImg={homeImgsPreLoading[1].currentSrc} /></Route>
+          <Route exact path="/" ><Home /></Route>
+          <Route path="/test"><Test imgs={testImgsPreLoading} /></Route>
           <Route path="/result"><Result imgs={coffeeImgsPreLoading} /></Route>
           <Route path="/list"><List imgs={coffeeImgsPreLoading} /></Route>
-          <Route path="/info"><Info imgs={homeImgsPreLoading[3].currentSrc} /></Route>
-          <Route><NotFound imgs={homeImgsPreLoading[2].currentSrc} /></Route>
+          <Route path="/info"><Info /></Route>
+          <Route><NotFound /></Route>
         </Switch>
       </Container>
     </Router>

@@ -63,8 +63,6 @@ const CoffeeContent = styled.li`
 const Result = ({ imgs }) => {
   const score = useReactiveVar(scoreVar)
   const coffee = coffeeInfo(score)
-  console.log(coffee?.id);
-  console.log(coffee);
   return (<>
     {coffee === null ? <NotFound /> : <Container>
       <CoffeeContainer>

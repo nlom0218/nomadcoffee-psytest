@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
+import finsihImg from "../img/finish-unsplash.jpg"
 
 const LoadingContainer = styled.div`
     width: 100%;
@@ -54,7 +55,7 @@ const FinsihImg = styled.img`
   border-radius: 10px;
 `
 
-const Finish = ({ finsihImg }) => {
+const Finish = () => {
   const [onload, setOnload] = useState(0)
   const [loadEnd, setLoadEnd] = useState(false)
 

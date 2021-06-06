@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import notFound_img from "../img/notFound-unsplash.jpg"
 
 const Container = styled.div`
   display: flex;
@@ -39,10 +40,10 @@ const HomeBtn = styled.div`
   }
 `
 
-const NotFound = ({ imgs }) => {
+const NotFound = () => {
   return (<Container>
     <Title>404 Not Found</Title>
-    <NotFoundImg src={imgs} />
+    <NotFoundImg src={notFound_img} />
     <HomeBtn>
       <Link to="/">
         <FontAwesomeIcon icon={faHome} />
