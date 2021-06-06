@@ -1,7 +1,9 @@
 import { useReactiveVar } from '@apollo/client';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { darkModeVar, scoreVar } from '../apollo';
+import { scoreVar } from '../apollo';
 import { checkList } from '../psyTestData';
 import Finish from './Finish';
 
@@ -11,6 +13,30 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 600px;
+`
+
+const Status = styled.div`
+  margin-top: 30px;
+  width: 600px;
+  position: relative;
+`
+
+const StautsIcon = styled.div`
+    position: absolute;
+    bottom: 40px;
+    svg {
+    color: ${props => props.theme.barBgColor};
+    font-size: 30px;
+  }
+`
+
+
+const StatusBar = styled.div`
+  width: 600px;
+  max-width: 600px;
+  height: 10px;
+  margin: 10px 0px 30px 0px;
+  background-color: ${props => props.theme.barBgColor};
 `
 
 const Title = styled.h1`
@@ -39,6 +65,7 @@ const Options = styled.ul`
 const Option = styled.li`
   box-shadow: ${props => props.theme.shadow};
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 24px;
   padding: 10px 15px;
   background-color: ${props => props.theme.optBgColor};
@@ -51,24 +78,31 @@ const Option = styled.li`
   }
 `
 
-
-
 const Test = () => {
   const [num, setNum] = useState(0)
   const lastScore = useReactiveVar(scoreVar)
-  console.log(`lastSocre: ${lastScore}`);
   const onClikeNextBtn = (e) => {
     const { target: { dataset: { score } } } = e
     scoreVar(lastScore + parseInt(score))
     setNum(num + 1)
   }
-  return (<Container>
-    { num === 10 ? <Finish /> : <><Title>
-      <div style={{ marginRight: "10px" }}>#</div>
-      <div>
-        {checkList[num].title}
-      </div>
-    </Title>
+  const leftSize = () => {
+    return num * 60 + 20
+  }
+  return (<><Container>
+    {num === 10 ? <Finish /> : <>
+      <Status>
+        <StautsIcon style={{ left: leftSize() }}>
+          <FontAwesomeIcon icon={faCoffee} />
+        </StautsIcon>
+        <StatusBar></StatusBar>
+      </Status>
+      <Title>
+        <div style={{ marginRight: "10px" }}>#</div>
+        <div>
+          {checkList[num].title}
+        </div>
+      </Title>
       <Img src={checkList[num].img}></Img>
       <Options>
         {checkList[num].options.map((option, index) => (
@@ -79,8 +113,10 @@ const Test = () => {
             {option}
           </Option>
         ))}
-      </Options></>}
-  </Container >);
+      </Options>
+    </>}
+  </Container >
+  </>);
 }
 
 export default Test;

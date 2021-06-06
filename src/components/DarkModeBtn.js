@@ -19,8 +19,14 @@ const Btn = styled.span`
 
 const DarkModeBtn = () => {
   const darkMode = useReactiveVar(darkModeVar)
-  const disableDarkMode = () => darkModeVar(false)
-  const enableDarkMode = () => darkModeVar(true)
+  const disableDarkMode = () => {
+    localStorage.removeItem("dark")
+    darkModeVar(false)
+  }
+  const enableDarkMode = () => {
+    localStorage.setItem("dark", "true")
+    darkModeVar(true)
+  }
   return (<Btn>
     <FontAwesomeIcon
       icon={darkMode ? faSun : faMoon}

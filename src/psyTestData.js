@@ -8,6 +8,14 @@ import test7Img from "./img/test7-unsplash.jpg"
 import test8Img from "./img/test8-unsplash.jpg"
 import test9Img from "./img/test9-unsplash.jpg"
 import test10Img from "./img/test10-unsplash.jpg"
+import coffee1Img from "./img/coffee1-unsplash.jpg"
+import coffee2Img from "./img/coffee2-unsplash.jpg"
+import coffee3Img from "./img/coffee3-unsplash.jpg"
+import coffee4Img from "./img/coffee4-unsplash.jpg"
+import coffee5Img from "./img/coffee5-unsplash.jpg"
+import coffee6Img from "./img/coffee6-unsplash.jpg"
+import coffee7Img from "./img/coffee7-unsplash.jpg"
+
 
 
 export const checkList = [
@@ -15,9 +23,9 @@ export const checkList = [
     id: 1,
     title: "이제부터 당신은 여행을 계획합니다. 당신이 가고싶어하는 여행지는 어디입니까?",
     options: [
-      "가깝지만 평소에 많이 가지 못했던 곳", // 1
-      "인스타에서 소문난 국내여행지", // 5
-      "낯설지만 평소 가보고 싶었던 해외여행지" // 10
+      "가깝지만 평소에 많이 가지 못했던 곳",
+      "인스타에서 소문난 국내여행지",
+      "낯설지만 평소 가보고 싶었던 해외여행지"
     ],
     img: test1Img
   },
@@ -25,9 +33,9 @@ export const checkList = [
     id: 2,
     title: "몇 일 동안 여행을 떠나고 싶나요?",
     options: [
-      "3일 이내의 짧은 기간", // 1
-      "일주일 정도의 기간", // 5
-      "한 달 이상의 긴 기간" // 10
+      "3일 이내의 짧은 기간",
+      "일주일 정도의 기간",
+      "한 달 이상의 긴 기간"
     ],
     img: test2Img
   },
@@ -110,5 +118,92 @@ export const checkList = [
       "최선을 다해 놀 다 녹초가 되어 집으로 간다"
     ],
     img: test10Img
+  }
+]
+
+export const coffee = [
+  {
+    //10 ~ 12
+    id: 1,
+    EName: "Espresso",
+    KName: "에스프레소",
+    contents: [
+      "조용한 휴식이 필요한 당신에게 에스프레소를 추천합니다",
+      "에스프레소라는 이름은 영어로 `빠른`을 뜻하는 Express의 이탈리아어 입니다",
+      "아주 진한 이탈리아식 커피로 데미타세(demitasse)라는 조그만 잔에 담아서 마셔야 제맛을 느낄 수 있습니다"
+    ],
+    img: coffee1Img
+  },
+  {
+    //13 ~ 15
+    id: 2,
+    EName: "Americano",
+    KName: "아메리카노",
+    contents: [
+      "상냥하고 헌신적인 당신에게 아메리카노를 추천합니다",
+      "에스프레소에 뜨거운 물을 섞어 연하게 마시는 커피로 미국인들(American)이 즐겨 마신다고 하여 붙여진 이름입니다",
+      "다른 커피 종류들에 비해 칼로리가 매우 낮아 다이어트에 매우 좋은 커피입니다"
+    ],
+    img: coffee2Img
+  },
+  {
+    //16 ~ 18
+    id: 3,
+    EName: "Caffe Latte",
+    KName: "카페라떼",
+    contents: [
+      "낭만적인 당신에게 카페라떼를 추천합니다",
+      "라떼는 이탈리아어로 우유를 뜻으로 에스프레소와 우유의 만남을 이름 그대로 표현한 커피입니다",
+      "부드러운 우유 맛이 일품인 라떼는 양을 많이 해서 큰 잔에 마시며 아침 식사 대용으로도 든든합니다"
+    ],
+    img: coffee3Img
+  },
+  {
+    //19 ~ 21
+    id: 4,
+    EName: "Vanila Latte",
+    KName: "바닐라라떼",
+    contents: [
+      "이상보다는 현실을 직시하는 당신에게 바닐라라떼를 추천합니다",
+      "에스프레소를 이용한 카페라떼에 바닐라 시럽을 넣은 커피입니다",
+      "바닐라 시럽을 넣어 에스프레소의 쓴맛과 바닐라시럽의 향미가 함께 느껴져 대부분 사람들의 입맛을 가리지 않습니다"
+    ],
+    img: coffee4Img
+  },
+  {
+    //21 ~ 23
+    id: 5,
+    EName: "Caramel Macchiato",
+    KName: "카라멜 마끼아또",
+    contents: [
+      "자유로운 영혼을 가진 당신에게 카라멜 마끼아또를 추천합니다",
+      "마끼아또는 얼룩진, 표시한, 점 등의 의미를 가진 이탈리아어로 에스프레소 위에 흰 거품을 올린 모양이 꼭 얼국과 같다고 하여 이름이 붙었습니다",
+      "카라멜 마끼아또는 젓지 않고 그냥 그대로 마시면 우유와 우유거품, 에스프레소, 시럽을 입안에서 다 느낄 수 있습니다"
+    ],
+    img: coffee5Img
+  },
+  {
+    //24 ~ 26asdf
+    id: 6,
+    EName: "Cappuccino",
+    KName: "카푸치노",
+    contents: [
+      "도전정신이 뛰어난 당신에게 카푸치노를 추천합니다",
+      "카푸치노라는 이름의 유래 중 하나는 이탈리아 프란체스코회의 카푸친 수도회(Capuchin friars) 수도사들의 머리모양과 비슷하여 이름이 붙어졌다는 것입니다",
+      "달콤한 우유 거품을 듬뿍 추가하여 카푸치노를 즐겨 보세요"
+    ],
+    img: coffee6Img
+  },
+  {
+    // ~ 30
+    id: 7,
+    EName: "Caffe Mocha",
+    KName: "카페모카",
+    contents: [
+      "에너지가 넘치는 당신에게 카페모카를 추천합니다",
+      "커피, 우유, 초콜릿이 함께한 메뉴로 최초 커피 경작지인 예멘지역의 커피 수출이 원활했던 항구 모카(Mocha)에서 이름에서 유래되었습니다",
+      "카페모카 위에 캐러멜, 생크림등을 추가하면 더욱 맛있는 카페모카를 즐길 수 있습니다"
+    ],
+    img: coffee7Img
   }
 ]

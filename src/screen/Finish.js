@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import styled from 'styled-components';
-import { darkModeVar } from '../apollo';
+import finsihImg from "../img/finish-unsplash.jpg"
 
 const LoadingContainer = styled.div`
     width: 100%;
@@ -9,7 +9,7 @@ const LoadingContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 200px;
+    margin-top: 50px;
 `
 
 const LoadingBar = styled.div`
@@ -29,6 +29,7 @@ const BarState = styled.div`
 `
 
 const BarText = styled.div`
+  color: ${props => props.theme.barText};
   font-size: 18px;
   font-weight: bold;
   left: 15px;
@@ -37,11 +38,21 @@ const BarText = styled.div`
 `
 
 const LoadingMsg = styled.div`
+    font-weight: 600;
     width: 100% ;
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
+`
+
+const FinsihImg = styled.img`
+  margin-top: 100px;
+  width: 600px;
+  max-width: 600px;
+  height: 400px;
+  box-shadow: ${props => props.theme.shadow};
+  border-radius: 10px;
 `
 
 const Finish = () => {
@@ -59,13 +70,15 @@ const Finish = () => {
       setLoadEnd(true)
     }
   }, [onload])
-  return (<><LoadingContainer>
-    <LoadingBar>
-      <BarState style={{ width: `${onload}%` }}></BarState>
-      <BarText>{onload}%</BarText>
-    </LoadingBar>
-    <LoadingMsg>{loadEnd ? "" : "커피 추출 중... ☕️"}</LoadingMsg>
-  </LoadingContainer>
+  return (<>
+    <FinsihImg src={finsihImg} />
+    <LoadingContainer>
+      <LoadingBar>
+        <BarState style={{ width: `${onload}%` }}></BarState>
+        <BarText>{onload}%</BarText>
+      </LoadingBar>
+      <LoadingMsg>{loadEnd ? "" : "커피 추출 중... ☕️"}</LoadingMsg>
+    </LoadingContainer>
     {loadEnd && <Redirect to="/result" />}
   </>
   );
