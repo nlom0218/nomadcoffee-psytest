@@ -1,5 +1,5 @@
 import { useReactiveVar } from '@apollo/client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import styled, { ThemeProvider } from 'styled-components';
 import DarkModeBtn from './components/DarkModeBtn';
@@ -11,6 +11,7 @@ import Result from './screen/Result';
 import List from './screen/List';
 import Info from './screen/Info';
 import NotFound from './screen/NotFound';
+import { files, preloading } from "./utils"
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const Container = styled.div`
 
 function App() {
   const darkMode = useReactiveVar(darkModeVar)
+  console.log(preloading(files));
   return (<ThemeProvider theme={darkMode ? darkTheme : ligthTheme}>
     <GlobalStyles />
     <Router>
