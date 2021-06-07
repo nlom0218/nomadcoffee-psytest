@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { scoreVar } from '../apollo';
 
 const NavContainer = styled.div`
 width: 40%;
@@ -31,7 +32,7 @@ const Nav = () => {
       </Link>
     </HomeBtn>
     <TestBtn>
-      <Link to="/test">
+      <Link to="/test" onClick={() => scoreVar(0)}>
         <FontAwesomeIcon icon={faUndo} />
       </Link>
     </TestBtn>

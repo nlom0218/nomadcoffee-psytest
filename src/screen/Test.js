@@ -40,7 +40,7 @@ const StatusBar = styled.div`
 `
 
 const Title = styled.h1`
-  height: 100px;
+margin-bottom: 20px;
   width: 100%;
   display:flex;
   justify-content: flex-start;

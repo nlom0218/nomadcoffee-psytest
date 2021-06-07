@@ -11,7 +11,6 @@ import Result from './screen/Result';
 import List from './screen/List';
 import Info from './screen/Info';
 import NotFound from './screen/NotFound';
-import { files, preloading } from "./utils"
 
 import test1Img from "./img/test1-unsplash.jpg"
 import test2Img from "./img/test2-unsplash.jpg"

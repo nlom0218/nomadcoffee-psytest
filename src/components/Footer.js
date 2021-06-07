@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCube, faInfo } from '@fortawesome/free-solid-svg-icons';
+import { faCube, faInfo, faList } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -18,7 +18,20 @@ const Info = styled.div`
   width: 600px;
 `
 
+const ViewMenus = styled.div`
+  font-size: 18px;
+  display: flex;
+  svg {
+    margin-right: 10px;
+  }
+  a {
+    color: ${props => props.theme.fontColor};
+    text-decoration: none;
+  }
+`
+
 const ProjectContent = styled.div`
+  margin-top: 10px; 
   font-size: 18px;
   display: flex;
   svg {
@@ -74,6 +87,12 @@ const Footer = () => {
   const [info, setInfo] = useState(false)
   return (<Container>
     <Info>
+      <ViewMenus>
+        <FontAwesomeIcon icon={faList} />
+        <Link to="/list">
+          View all coffee menus
+        </Link>
+      </ViewMenus>
       <ProjectContent>
         <FontAwesomeIcon icon={faCube} />
         <ProjectName>
