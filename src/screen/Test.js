@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { scoreVar } from '../apollo';
+import PageTitle from '../components/PageTitle';
 import { checkList } from '../psyTestData';
 import Finish from './Finish';
 
@@ -89,33 +90,35 @@ const Test = ({ imgs, finsihImg }) => {
   const leftSize = () => {
     return num * 60 + 20
   }
-  return (<><Container>
-    {num === 10 ? <Finish finsihImg={finsihImg} /> : <>
-      <Status>
-        <StautsIcon style={{ left: leftSize() }}>
-          <FontAwesomeIcon icon={faCoffee} />
-        </StautsIcon>
-        <StatusBar></StatusBar>
-      </Status>
-      <Title>
-        <div style={{ marginRight: "10px" }}>#</div>
-        <div>
-          {checkList[num].title}
-        </div>
-      </Title>
-      <Img src={imgs[num].currentSrc}></Img>
-      <Options>
-        {checkList[num].options.map((option, index) => (
-          <Option
-            key={index}
-            data-score={index + 1}
-            onClick={onClikeNextBtn} >
-            {option}
-          </Option>
-        ))}
-      </Options>
-    </>}
-  </Container >
+  return (<>
+    <Container>
+      <PageTitle title="TEST" />
+      {num === 10 ? <Finish finsihImg={finsihImg} /> : <>
+        <Status>
+          <StautsIcon style={{ left: leftSize() }}>
+            <FontAwesomeIcon icon={faCoffee} />
+          </StautsIcon>
+          <StatusBar></StatusBar>
+        </Status>
+        <Title>
+          <div style={{ marginRight: "10px" }}>#</div>
+          <div>
+            {checkList[num].title}
+          </div>
+        </Title>
+        <Img src={imgs[num].currentSrc}></Img>
+        <Options>
+          {checkList[num].options.map((option, index) => (
+            <Option
+              key={index}
+              data-score={index + 1}
+              onClick={onClikeNextBtn} >
+              {option}
+            </Option>
+          ))}
+        </Options>
+      </>}
+    </Container >
   </>);
 }
 

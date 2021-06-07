@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 import styled from 'styled-components';
+import PageTitle from '../components/PageTitle';
 import finsihImg from "../img/finish-unsplash.jpg"
 
 const LoadingContainer = styled.div`
@@ -71,6 +72,7 @@ const Finish = () => {
     }
   }, [onload])
   return (<>
+    <PageTitle title="FINISH" />
     <FinsihImg src={finsihImg} />
     <LoadingContainer>
       <LoadingBar>

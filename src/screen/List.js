@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import Nav from '../components/Nav';
+import PageTitle from '../components/PageTitle';
 import { coffee } from '../psyTestData';
 
 const Container = styled.div`
@@ -68,27 +69,29 @@ const CoffeeContent = styled.li`
 const List = ({ imgs }) => {
   const coffeeList = coffee
 
-  return (<><Container>
-    <Title>NOMADCOFFEE LIST</Title>
-    {coffeeList.map((coffee, index) => {
-      return <CoffeeContainer key={index}>
-        <CoffeeName>
-          <FontAwesomeIcon icon={faCoffee} />
-          {coffee?.EName}
-        </CoffeeName>
-        <CoffeeImg src={imgs[index].currentSrc} />
-        <CoffeeContents>
-          {coffee?.contents.map((item, index) =>
-            <CoffeeContent key={index}>
-              <FontAwesomeIcon icon={faCoffee} />
-              {item}
-            </CoffeeContent>
-          )}
-        </CoffeeContents>
-      </CoffeeContainer>
-    })}
-    <Nav />
-  </Container>
+  return (<>
+    <PageTitle title="LIST" />
+    <Container>
+      <Title>NOMADCOFFEE LIST</Title>
+      {coffeeList.map((coffee, index) => {
+        return <CoffeeContainer key={index}>
+          <CoffeeName>
+            <FontAwesomeIcon icon={faCoffee} />
+            {coffee?.EName}
+          </CoffeeName>
+          <CoffeeImg src={imgs[index].currentSrc} />
+          <CoffeeContents>
+            {coffee?.contents.map((item, index) =>
+              <CoffeeContent key={index}>
+                <FontAwesomeIcon icon={faCoffee} />
+                {item}
+              </CoffeeContent>
+            )}
+          </CoffeeContents>
+        </CoffeeContainer>
+      })}
+      <Nav />
+    </Container>
     {/* <Footer /> */}
   </>);
 }

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { scoreVar } from '../apollo';
 import Footer from '../components/Footer';
+import PageTitle from '../components/PageTitle';
 import home_img from "../img/home-unsplash.jpg"
 
 const Container = styled.div`
@@ -61,6 +62,7 @@ const HomeMsg = styled.span`
 const Home = () => {
   return (<>
     <Container>
+      <PageTitle title="HOME" />
       <MainTitle>
         NOMADCOFFEE TYPE TEST
     </MainTitle>

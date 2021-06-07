@@ -33,6 +33,7 @@ import homeImg from "./img/home-unsplash.jpg"
 import finsihImg from "./img/finish-unsplash.jpg"
 import notFoundImg from "./img/notFound-unsplash.jpg"
 import infoImg from "./img/info-unsplash.jpg"
+import { HelmetProvider } from 'react-helmet-async';
 
 const Container = styled.div`
   display: flex;
@@ -69,22 +70,26 @@ function App() {
     homeImgsPreLoading[index].src = item
   })
 
-  return (<ThemeProvider theme={darkMode ? darkTheme : ligthTheme}>
-    <GlobalStyles />
-    <Router>
-      <DarkModeBtn />
-      <Container>
-        <Switch>
-          <Route exact path="/" ><Home /></Route>
-          <Route path="/test"><Test imgs={testImgsPreLoading} /></Route>
-          <Route path="/result"><Result imgs={coffeeImgsPreLoading} /></Route>
-          <Route path="/list"><List imgs={coffeeImgsPreLoading} /></Route>
-          <Route path="/info"><Info /></Route>
-          <Route><NotFound /></Route>
-        </Switch>
-      </Container>
-    </Router>
-  </ThemeProvider >);
+  return (
+    <HelmetProvider>
+      <ThemeProvider theme={darkMode ? darkTheme : ligthTheme}>
+        <GlobalStyles />
+        <Router>
+          <DarkModeBtn />
+          <Container>
+            <Switch>
+              <Route exact path="/" ><Home /></Route>
+              <Route path="/test"><Test imgs={testImgsPreLoading} /></Route>
+              <Route path="/result"><Result imgs={coffeeImgsPreLoading} /></Route>
+              <Route path="/list"><List imgs={coffeeImgsPreLoading} /></Route>
+              <Route path="/info"><Info /></Route>
+              <Route><NotFound /></Route>
+            </Switch>
+          </Container>
+        </Router>
+      </ThemeProvider >
+    </HelmetProvider>
+  );
 }
 
 export default App;

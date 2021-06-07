@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PageTitle from '../components/PageTitle';
 import info_img from "../img/info-unsplash.jpg"
 
 const Container = styled.div`
@@ -73,6 +74,7 @@ const HomeBtn = styled.div`
 
 const Info = () => {
   return (<Container>
+    <PageTitle title="INFO" />
     <Title>NOMAD COFFEE INFO</Title>
     <InfoImg src={info_img} />
     <ImgInfo>

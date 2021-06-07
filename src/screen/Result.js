@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { scoreVar } from '../apollo';
 import Nav from '../components/Nav';
+import PageTitle from '../components/PageTitle';
 import { coffeeInfo } from "../utils"
 import NotFound from './NotFound';
 
@@ -64,6 +65,7 @@ const Result = ({ imgs }) => {
   const score = useReactiveVar(scoreVar)
   const coffee = coffeeInfo(score)
   return (<>
+    <PageTitle title="RESULT" />
     {coffee === null ? <NotFound /> : <Container>
       <CoffeeContainer>
         <CoffeeName>
